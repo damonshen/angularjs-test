@@ -2,11 +2,11 @@ extends layout
 
 block content
   .listCtrl(ng-controller='DataListCtrl')
-    li(ng-repeat="phone in phones")
-      h3(phone-list)
-    form(name='new-phone')
+    .ui.segment.piled
+      li(ng-repeat="phone in phones")
+          .ui.segment.blue(phone-list)
       li
-        h3(phone-list)
-      input(type='text' name='phoneName' ng-model='phone.name')
-      input(type='text' name='phoneSnippet' ng-model='phone.snippet')
-      input(type='submit')
+        .ui.segment.blue(phone-list)
+    input(type='text' name='phoneName' ng-model='phone.name')
+    input(type='text' name='phoneSnippet' ng-model='phone.snippet')
+    input(type='submit')
