@@ -1,5 +1,5 @@
 doctype html
-html.no-js
+html(ng-app='app')
     head
         meta(charset='utf-8')
         title My Webapp
@@ -20,6 +20,7 @@ html.no-js
         // build:js scripts/vendor/modernizr.js
         script(src='../bower_components/modernizr/modernizr.js')
         // endbuild
+        script(src='./bower_components/angular/angular.min.js')
 
     body
         | <!--[if lt IE 10]>
@@ -27,23 +28,7 @@ html.no-js
         | <![endif]-->
 
         .container
-            .header
-                ul.nav.nav-pills.pull-right
-                    li.active: a(href='#') Home
-                    li: a(href='#') About
-                    li: a(href='#') Contact
-
-                h3.text-muted My Webapp
-
-            .jumbotron
-                h1 'Allo, 'Allo!
-                p.lead Always a pleasure scaffolding your apps.
-                p: a.btn.btn-lg.btn-success(href='#') Splendid!
-
             block content
-
-            .footer
-                p ♥ from the Yeoman team
 
         // Google Analytics: change UA-XXXXX-X to be your site's ID.
         script.
@@ -56,7 +41,6 @@ html.no-js
 
         // build:js scripts/vendor.js
         // bower:js
-        script(src='bower_components/jquery/dist/jquery.js')
         script(src='bower_components/modernizr/modernizr.js')
         script(src='bower_components/bootstrap/dist/js/bootstrap.js')
         // endbower
