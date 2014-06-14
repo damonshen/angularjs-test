@@ -1,12 +1,15 @@
 extends layout
 
 block content
-  .listCtrl(ng-controller='DataListCtrl')
-    .ui.segment.piled
-      li(ng-repeat="phone in phones")
-          .ui.segment.blue(phone-list)
-      li
-        .ui.segment.blue(phone-list)
-    input(type='text' name='phoneName' ng-model='phone.name')
-    input(type='text' name='phoneSnippet' ng-model='phone.snippet')
-    input(type='submit')
+  .listCtrl
+    .form(ng-controller='DataListCtrl as dataCtrl' ng-submit='dataCtrl.addData()')
+      .ui.segment.piled
+        .ui.stackable.items
+          .item(ng-repeat="phone in phones")
+            div(phone-list)
+          .item
+            {{dataCtrl.data.name}}
+            p {{dataCtrl.data.snippet}}
+      input(type='text' name='dataName' ng-model='dataCtrl.data.name')
+      input(type='text' name='dataSnippet' ng-model='dataCtrl.data.snippet')
+      input(type='submit')
