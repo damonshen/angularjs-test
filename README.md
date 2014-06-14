@@ -1,4 +1,4 @@
-gulp-webapp
+angularjs-webapp
 ===========
 
 web app use gulp with jade ,stylus, livescript
